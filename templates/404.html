@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Страница не найдена · {{ super() }}
+{% endblock title %}
+
+{% block head_description %}
+Страница не найдена в  {{ SITENAME|striptags|e }}.
+{% endblock head_description %}
+{% block content %}
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1>Эта страница не найдена!!</h1>
+    </header>
+</div>
+
+
+<div class="row-fluid">
+    <div class="span8 offset2">
+        <p>Извините, но страница которую вы хотели увидеть не найдена.</p>
+<p>Вы можите попробывать найти нужную информацию при помощи поиска или перейти на главную </br> <a href="{{ SITEURL }}">Главная</a>.</p>
+        <div class="input-append">
+            <form action="{{ SITEURL }}/search.html" onsubmit="return validateForm(this.elements['q'].value)">
+                <input type="text" class="span12" required="required" placeholder="Поиск" name="q" id="tipue_search_input_404">
+                <button class="btn" type="submit">Поиск</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
